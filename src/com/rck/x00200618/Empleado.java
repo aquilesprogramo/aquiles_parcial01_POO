@@ -9,7 +9,7 @@ public abstract class Empleado {
     protected double salario;
 
     //talvez borrar Arraylist de arriba
-    public Empleado(String nombre, String puesto, ArrayList<Documento> documentos, double salario) {
+    public Empleado(String nombre, String puesto,double salario) {
         this.nombre = nombre;
         this.puesto = puesto;
         documentos = new ArrayList<Documento>();
