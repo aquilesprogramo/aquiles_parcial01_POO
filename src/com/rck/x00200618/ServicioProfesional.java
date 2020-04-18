@@ -20,7 +20,7 @@ public class ServicioProfesional extends Empleado{
 
     @Override
     public String toString() {
-        return "empleado{" +
+        return "Empleado{" +
                 "mesesContrato=" + mesesContrato +
                 ", nombre='" + nombre + '\'' +
                 ", puesto='" + puesto + '\'' +

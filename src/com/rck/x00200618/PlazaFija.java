@@ -21,7 +21,7 @@ public class PlazaFija extends Empleado{
 
     @Override
     public String toString() {
-        return "empleado{" +
+        return "Empleado{" +
                 "extension=" + extension +
                 ", nombre='" + nombre + '\'' +
                 ", puesto='" + puesto + '\'' +

@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan=new Scanner(System.in);
         int op1=0,op2=0,op3=0;
-        String nombre="",puesto="",borrar="",empresa="",Nmd="",Numdocum="";
+        String nombre="",puesto="",borrar="",empresa="",Nmd="",Numdocum="",search="";
         double salario=0;
         int cantidadmeses=0,extencion=0,id=0;
         empresa=JOptionPane.showInputDialog(null,"Nombre de la empresa:");
@@ -107,16 +107,28 @@ public class Main {
 
                     //elegir nombre y mostrar sueldo de el
                 case 4:
+                    search=JOptionPane.showInputDialog(null,"Nombre a buscar:");
                     ServicioProfesional servicioProfesional= new ServicioProfesional(nombre,puesto,salario,cantidadmeses);
                     PlazaFija plazaFija=new PlazaFija(nombre,puesto,salario,extencion);
+                    String finalSearch = search;
+                    corp.getPlanilla().forEach(obj->{
+                        if (obj.getNombre().equals(finalSearch)){
+                            if (obj instanceof ServicioProfesional){
+                                JOptionPane.showMessageDialog(null,"Sueldo: "+CalculadoraImpuestos.calcularPago(obj)+"$");}
+                            else{
+                                JOptionPane.showMessageDialog(null,"Sueldo: "+CalculadoraImpuestos.calcularPago(obj)+"$");
+                            }
+                        }
+                    });
 
-                    if (id==1){
-                    JOptionPane.showMessageDialog(null,"Sueldo: "+CalculadoraImpuestos.calcularPago(servicioProfesional)+"$");}
-                    else{
-                        JOptionPane.showMessageDialog(null,"Sueldo: "+CalculadoraImpuestos.calcularPago(plazaFija)+"$");
-                    }
                     break;
                 case 5:
+                    if (corp.getPlanilla().size()!=0) {
+                        JOptionPane.showMessageDialog(null, CalculadoraImpuestos.mostrarTotales());
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null,"La lista esta vacia.");
+                    }
                     break;
             }
         }while (op1!=6);
@@ -127,4 +139,5 @@ public class Main {
     public static String menu2(){
         return "1) Agregar otro documento\n2) No agregar mas";
     }
+
 }

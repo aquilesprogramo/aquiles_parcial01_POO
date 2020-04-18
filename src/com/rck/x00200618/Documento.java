@@ -18,10 +18,10 @@ public class Documento {
         return numero;
     }
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return
+                "nombre='" + nombre + '\'' +
+                ", numero='" + numero + '\'';
+    }
 }

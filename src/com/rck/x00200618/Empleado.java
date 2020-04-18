@@ -60,7 +60,7 @@ public abstract class Empleado {
         return "Empleado{" +
                 "nombre='" + nombre + '\'' +
                 ", puesto='" + puesto + '\'' +
-                ", documentos=" + documentos +
+                ", documentos=" + documentos.toString() +
                 ", salario=" + salario +
                 '}';
     }
