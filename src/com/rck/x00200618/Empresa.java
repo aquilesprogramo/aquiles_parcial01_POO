@@ -1,5 +1,6 @@
 package com.rck.x00200618;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Empresa {
@@ -26,11 +27,16 @@ public class Empresa {
     }
 
     public void removeEmpleado(String borrar){
-        planilla.forEach(empl->{
-            if (empl.getNombre()==borrar){
-                planilla.remove(empl);
-            }
-        });
+        if (planilla.size()!=0) {
+            planilla.forEach(empl -> {
+                if (empl.getNombre() == borrar) {
+                    planilla.remove(empl);
+                }
+            });
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"La lista esta vacia");
+        }
     }
 
 }

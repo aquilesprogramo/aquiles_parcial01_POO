@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="054357ba-8702-4351-8d72-c7a81d591cda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rck/x00200618/CalculadoraImpuestos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rck/x00200618/CalculadoraImpuestos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/rck/x00200618/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/rck/x00200618/Empleado.java" afterDir="false" />
@@ -67,7 +65,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587137197699</updated>
-      <workItem from="1587142528924" duration="3424000" />
+      <workItem from="1587142528924" duration="3805000" />
+      <workItem from="1587173659525" duration="4756000" />
     </task>
     <servers />
   </component>
@@ -75,29 +74,33 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1587145773928">
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1587177338731">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1587145773928" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1587177338731" />
     <state x="534" y="256" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587142556890">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="534" y="256" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1587142556890" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1587143353299">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1587178472903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587143353299" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1587143353299">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587178472903" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1587178472902">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587143353299" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1587143353299">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587178472902" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1587178472900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587143353299" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1587143353299">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587178472900" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1587178472902">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587143353299" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587178472902" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1587173797720">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587173797720" />
   </component>
 </project>
