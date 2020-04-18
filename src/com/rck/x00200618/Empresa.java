@@ -28,11 +28,7 @@ public class Empresa {
 
     public void removeEmpleado(String borrar){
         if (planilla.size()!=0) {
-            planilla.forEach(empl -> {
-                if (empl.getNombre() == borrar) {
-                    planilla.remove(empl);
-                }
-            });
+            planilla.removeIf(Empleado -> (Empleado.getNombre().equals(borrar)));
         }
         else{
             JOptionPane.showMessageDialog(null,"La lista esta vacia");

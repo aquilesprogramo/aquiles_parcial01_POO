@@ -1,5 +1,6 @@
 package com.rck.x00200618;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public abstract class Empleado {
@@ -44,11 +45,14 @@ public abstract class Empleado {
     //acabar cuando este el documento
     public void removeDocumento(String borrar)
     {
-        documentos.forEach(docum->{
-            if(docum.getNombre()==borrar){
-                documentos.remove(docum);
-            }
-        });
+
+        if (documentos.size()!=0) {
+            documentos.removeIf(Documento -> (Documento.getNombre().equals(borrar)));
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"La lista esta vacia");
+        }
+
     }
 
     @Override
