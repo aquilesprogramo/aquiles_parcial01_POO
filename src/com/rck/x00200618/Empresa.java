@@ -31,7 +31,7 @@ public class Empresa {
             planilla.removeIf(Empleado -> (Empleado.getNombre().equals(borrar)));
         }
         else{
-            JOptionPane.showMessageDialog(null,"La lista esta vacia");
+            JOptionPane.showMessageDialog(null,"Empleado no encontrado");
         }
     }
 

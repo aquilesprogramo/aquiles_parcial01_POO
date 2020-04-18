@@ -14,8 +14,7 @@ public class CalculadoraImpuestos {
         this.totalAFP = 0;
     }
 
-    public static double calcularPago(Empleado empleado)
-    {
+    public static double calcularPago(Empleado empleado) {
         double total=0,trenta=0,tafp=0,tisss=0;
         if (empleado instanceof ServicioProfesional)
         {
@@ -59,7 +58,6 @@ public class CalculadoraImpuestos {
         return total;
     }
 
-    //acabar
     public static String mostrarTotales()
     {
         return "Total AFP= "+totalAFP+" Total renta= "+totalRenta+" Total ISSS= "+totalISSS;

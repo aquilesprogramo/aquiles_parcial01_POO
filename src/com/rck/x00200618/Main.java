@@ -19,91 +19,134 @@ public class Main {
                 case 1:
                 {
 
-                    op2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Como desea agregar al empleado\n1) Servicio profesional\n2) Plaza fija"));
-                    switch (op2) {
-                        case 1: {
-                            nombre = JOptionPane.showInputDialog(null, "Nombre del emplado:");
-                            puesto = JOptionPane.showInputDialog(null, "Puesto que ocupara:");
-                            salario = Integer.parseInt(JOptionPane.showInputDialog(null, "Salario:"));
-                            cantidadmeses = Integer.parseInt(JOptionPane.showInputDialog(null, "Meses estipulados en el contrato:"));
-                            Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
-                            Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
-                            ServicioProfesional servicioProfesional = new ServicioProfesional(nombre, puesto, salario, cantidadmeses);
-                            corp.addEmpleado(servicioProfesional);
-                            id = 1;
-
-                            Documento documento = new Documento(Nmd, Numdocum);
-                            servicioProfesional.documentos.add(documento);
-                            do {
-                                op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
-
-                                switch (op3) {
-                                    case 1: {
-                                        Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
-                                        Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
-                                        Documento documento1 = new Documento(Nmd, Numdocum);
-                                        servicioProfesional.documentos.add(documento1);
-                                        break;
-                                    }
-                                    case 2:
-                                    {
-                                        break;
-                                    }
-                                    default: {
-                                        JOptionPane.showMessageDialog(null, "Error digite un valor correcto");
-                                        break;
-                                    }
-                                }
-                            } while (op3 != 2);
-
-
-                            break;
-                        }
-                        case 2: {
-                            nombre = JOptionPane.showInputDialog(null, "Nombre del emplado:");
-                            puesto = JOptionPane.showInputDialog(null, "Puesto que ocupara:");
-                            salario = Integer.parseInt(JOptionPane.showInputDialog(null, "Salario:"));
-                            extencion = Integer.parseInt(JOptionPane.showInputDialog(null, "Numero telefonico de la oficina:"));
-                            PlazaFija plazaFija = new PlazaFija(nombre, puesto, salario, extencion);
-                            Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
-                            Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
-                            corp.addEmpleado(plazaFija);
-                            id = 2;
-                            Documento documento2 = new Documento(Nmd, Numdocum);
-                            plazaFija.documentos.add(documento2);
-                            do {
-                                op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
-
-                                switch (op3) {
-                                    case 1: {
-                                        Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
-                                        Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
-                                        Documento documento3 = new Documento(Nmd, Numdocum);
-                                        plazaFija.documentos.add(documento3);
-                                        break;
-                                    }
-                                    case 2:
-                                    {
-                                        break;
-                                    }
-                                    default: {
-                                        JOptionPane.showMessageDialog(null, "Digite un valor correcto");
-                                        break;
-                                    }
-                                }
-
-                            } while (op3 != 2);
-                            break;
-                        }
-
-
+                    op2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Como desea agregar al empleado/a\n1) Servicio profesional\n2) Plaza fija"));
+                    if (op2>2||op2<0){
+                        JOptionPane.showMessageDialog(null,"Error intente de nuevo");
+                        break;
                     }
-                    break;
+                    else {
+                        switch (op2) {
+                            case 1: {
+                                nombre = JOptionPane.showInputDialog(null, "Nombre del emplado/a:");
+                                puesto = JOptionPane.showInputDialog(null, "Puesto que ocupara:");
+                                try {
+                                    salario = Integer.parseInt(JOptionPane.showInputDialog(null, "Salario:"));
+                                    if (salario < 0) {
+                                        throw new Badcode("numeros negativos no validos");
+                                    }
+
+                                } catch (Badcode badcode) {
+                                    JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
+                                    break;
+                                }
+                                try{
+                                cantidadmeses = Integer.parseInt(JOptionPane.showInputDialog(null, "Meses estipulados en el contrato:"));
+                                    if (cantidadmeses < 0) {
+                                        throw new Badcode("numeros negativos no validos");
+                                    }
+                                } catch (Badcode badcode) {
+                                    JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
+                                    break;
+                                }
+                                Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
+                                Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
+                                ServicioProfesional servicioProfesional = new ServicioProfesional(nombre, puesto, salario, cantidadmeses);
+                                corp.addEmpleado(servicioProfesional);
+                                id = 1;
+                                Documento documento = new Documento(Nmd, Numdocum);
+                                servicioProfesional.documentos.add(documento);
+                                do {
+                                    op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
+
+                                    switch (op3) {
+                                        case 1: {
+                                            Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
+                                            Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
+                                            Documento documento1 = new Documento(Nmd, Numdocum);
+                                            servicioProfesional.documentos.add(documento1);
+                                            break;
+                                        }
+                                        case 2: {
+                                            break;
+                                        }
+                                        default: {
+                                            JOptionPane.showMessageDialog(null, "Error digite un valor correcto");
+                                            break;
+                                        }
+                                    }
+                                } while (op3 != 2);
+
+
+                                break;
+                            }
+                            case 2: {
+                                nombre = JOptionPane.showInputDialog(null, "Nombre del emplado/a:");
+                                puesto = JOptionPane.showInputDialog(null, "Puesto que ocupara:");
+                                try {
+                                    salario = Integer.parseInt(JOptionPane.showInputDialog(null, "Salario:"));
+                                    if (salario < 0) {
+                                        throw new Badcode("numeros negativos no validos");
+                                    }
+
+                                } catch (Badcode badcode) {
+                                    JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
+                                    break;
+                                }
+                                try {
+                                    extencion = Integer.parseInt(JOptionPane.showInputDialog(null, "Numero telefonico de la oficina:"));
+                                    if (extencion < 0) {
+                                        throw new Badcode("numeros negativos no validos");
+                                    }
+
+                                } catch (Badcode badcode) {
+                                    JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
+                                    break;
+                                }
+                                PlazaFija plazaFija = new PlazaFija(nombre, puesto, salario, extencion);
+                                Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
+                                Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
+                                corp.addEmpleado(plazaFija);
+                                id = 2;
+                                Documento documento2 = new Documento(Nmd, Numdocum);
+                                plazaFija.documentos.add(documento2);
+                                do {
+                                    op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
+
+                                    switch (op3) {
+                                        case 1: {
+                                            Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
+                                            Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
+                                            Documento documento3 = new Documento(Nmd, Numdocum);
+                                            plazaFija.documentos.add(documento3);
+                                            break;
+                                        }
+                                        case 2: {
+                                            break;
+                                        }
+                                        default: {
+                                            JOptionPane.showMessageDialog(null, "Digite un valor correcto");
+                                            break;
+                                        }
+                                    }
+
+                                } while (op3 != 2);
+                                break;
+                            }
+
+
+                        }
+                        break;
+                    }
             }
-                    //no funciona borrar
+
                 case 2: {
-                    borrar = JOptionPane.showInputDialog(null, "Nombre del empleado a despedir:");
-                    corp.removeEmpleado(borrar);
+                    if (corp.getPlanilla().size()!=0) {
+                        borrar = JOptionPane.showInputDialog(null, "Nombre del empleado/a a despedir:");
+                        corp.removeEmpleado(borrar);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null,"Error la lista esta vacia.");
+                    }
                     break;
                 }
                 case 3: {
@@ -125,19 +168,22 @@ public class Main {
 
                     //elegir nombre y mostrar sueldo de el
                 case 4: {
-                    search = JOptionPane.showInputDialog(null, "Nombre a buscar:");
-                    ServicioProfesional servicioProfesional = new ServicioProfesional(nombre, puesto, salario, cantidadmeses);
-                    PlazaFija plazaFija = new PlazaFija(nombre, puesto, salario, extencion);
-                    String finalSearch = search;
-                    corp.getPlanilla().forEach(obj -> {
-                        if (obj.getNombre().equals(finalSearch)) {
-                            if (obj instanceof ServicioProfesional) {
-                                JOptionPane.showMessageDialog(null, "Sueldo: " + CalculadoraImpuestos.calcularPago(obj) + "$");
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Sueldo: " + CalculadoraImpuestos.calcularPago(obj) + "$");
+                    if (corp.getPlanilla().size()!=0) {
+                        search = JOptionPane.showInputDialog(null, "Nombre a buscar:");
+                        String finalSearch = search;
+                        corp.getPlanilla().forEach(obj -> {
+                            if (obj.getNombre().equals(finalSearch)) {
+                                if (obj instanceof ServicioProfesional) {
+                                    JOptionPane.showMessageDialog(null, "Sueldo: " + CalculadoraImpuestos.calcularPago(obj) + "$");
+                                } else if(obj instanceof PlazaFija) {
+                                    JOptionPane.showMessageDialog(null, "Sueldo: " + CalculadoraImpuestos.calcularPago(obj) + "$");
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null,"Error la lista esta vacia");
+                    }
 
                     break;
                 }

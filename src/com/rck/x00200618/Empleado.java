@@ -42,10 +42,8 @@ public abstract class Empleado {
         documentos.add(x);
     }
 
-    //acabar cuando este el documento
     public void removeDocumento(String borrar)
     {
-
         if (documentos.size()!=0) {
             documentos.removeIf(Documento -> (Documento.getNombre().equals(borrar)));
         }
