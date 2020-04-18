@@ -10,16 +10,32 @@ public class Main {
         int op1=0,op2=0,op3=0;
         String nombre="",puesto="",borrar="",empresa="",Nmd="",Numdocum="",search="";
         double salario=0;
-        int cantidadmeses=0,extencion=0,id=0;
+        int cantidadmeses=0,extencion=0;
         empresa=JOptionPane.showInputDialog(null,"Nombre de la empresa:");
         Empresa corp=new Empresa(empresa);
         do {
-            op1=Integer.parseInt(JOptionPane.showInputDialog(null,menu()));
+
+            try {
+                op1=Integer.parseInt(JOptionPane.showInputDialog(null,menu()));
+            }
+            catch(NumberFormatException nfe)
+            {
+            }
+
             switch (op1) {
                 case 1:
                 {
 
-                    op2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Como desea agregar al empleado/a\n1) Servicio profesional\n2) Plaza fija"));
+                    try {
+                        op2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Como desea agregar al empleado/a\n1) Servicio profesional\n2) Plaza fija"));
+                    }
+                    catch(NumberFormatException nfe)
+                    {
+                        JOptionPane.showMessageDialog(null, "Error, digite un valor correcto");
+                        break;
+                    }
+
+
                     if (op2>2||op2<0){
                         JOptionPane.showMessageDialog(null,"Error intente de nuevo");
                         break;
@@ -30,7 +46,7 @@ public class Main {
                                 nombre = JOptionPane.showInputDialog(null, "Nombre del emplado/a:");
                                 puesto = JOptionPane.showInputDialog(null, "Puesto que ocupara:");
                                 try {
-                                    salario = Integer.parseInt(JOptionPane.showInputDialog(null, "Salario:"));
+                                    salario = Double.parseDouble(JOptionPane.showInputDialog(null, "Salario:"));
                                     if (salario < 0) {
                                         throw new Badcode("numeros negativos no validos");
                                     }
@@ -38,7 +54,13 @@ public class Main {
                                 } catch (Badcode badcode) {
                                     JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
                                     break;
+                                }catch (NumberFormatException nfe){
+                                    JOptionPane.showMessageDialog(null, "Error, digite un numero");
+                                    break;
                                 }
+
+
+
                                 try{
                                 cantidadmeses = Integer.parseInt(JOptionPane.showInputDialog(null, "Meses estipulados en el contrato:"));
                                     if (cantidadmeses < 0) {
@@ -47,16 +69,25 @@ public class Main {
                                 } catch (Badcode badcode) {
                                     JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
                                     break;
+                                }catch (NumberFormatException nfe){
+                                    JOptionPane.showMessageDialog(null, "Error, digite un numero");
+                                    break;
                                 }
+
                                 Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
                                 Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
                                 ServicioProfesional servicioProfesional = new ServicioProfesional(nombre, puesto, salario, cantidadmeses);
                                 corp.addEmpleado(servicioProfesional);
-                                id = 1;
                                 Documento documento = new Documento(Nmd, Numdocum);
                                 servicioProfesional.documentos.add(documento);
                                 do {
-                                    op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
+
+                                    try {
+                                        op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
+                                    }
+                                    catch(NumberFormatException nfe)
+                                    {
+                                    }
 
                                     switch (op3) {
                                         case 1: {
@@ -83,7 +114,7 @@ public class Main {
                                 nombre = JOptionPane.showInputDialog(null, "Nombre del emplado/a:");
                                 puesto = JOptionPane.showInputDialog(null, "Puesto que ocupara:");
                                 try {
-                                    salario = Integer.parseInt(JOptionPane.showInputDialog(null, "Salario:"));
+                                    salario = Double.parseDouble(JOptionPane.showInputDialog(null, "Salario:"));
                                     if (salario < 0) {
                                         throw new Badcode("numeros negativos no validos");
                                     }
@@ -91,7 +122,11 @@ public class Main {
                                 } catch (Badcode badcode) {
                                     JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
                                     break;
+                                }catch (NumberFormatException nfe){
+                                    JOptionPane.showMessageDialog(null, "Error, digite un numero");
+                                    break;
                                 }
+
                                 try {
                                     extencion = Integer.parseInt(JOptionPane.showInputDialog(null, "Numero telefonico de la oficina:"));
                                     if (extencion < 0) {
@@ -101,16 +136,26 @@ public class Main {
                                 } catch (Badcode badcode) {
                                     JOptionPane.showMessageDialog(null, "ERROR: " + badcode.getMessage());
                                     break;
+                                }catch (NumberFormatException nfe){
+                                    JOptionPane.showMessageDialog(null, "Error, digite un numero");
+                                    break;
                                 }
+
                                 PlazaFija plazaFija = new PlazaFija(nombre, puesto, salario, extencion);
                                 Nmd = JOptionPane.showInputDialog("Digite el nombre del documento");
                                 Numdocum = JOptionPane.showInputDialog("Digite el numero del documento");
                                 corp.addEmpleado(plazaFija);
-                                id = 2;
                                 Documento documento2 = new Documento(Nmd, Numdocum);
                                 plazaFija.documentos.add(documento2);
                                 do {
-                                    op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
+
+                                    try {
+                                        op3 = Integer.parseInt(JOptionPane.showInputDialog(null, menu2()));
+                                    }
+                                    catch(NumberFormatException nfe)
+                                    {
+                                    }
+
 
                                     switch (op3) {
                                         case 1: {
